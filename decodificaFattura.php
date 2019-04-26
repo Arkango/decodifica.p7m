@@ -6,7 +6,7 @@ define("PATH_XML_EXTRACT",'./');
 function decodificaFattura($path){
 
 	if(file_exists($path) && (strpos($path, ".p7m") !== false)){
-		//openssl smime -verify -inform DER -in IT01879020517_g00b5.xml.p7m  -noverify -out file_finale
+		//openssl smime -verify -inform DER -in file.xml.p7m  -noverify -out file_finale
 		$filename_output = time().".xml";
 
 		$command = "openssl smime -verify -inform DER -in ".$path."  -noverify -out ".PATH_XML_EXTRACT.$filename_output;
@@ -23,5 +23,5 @@ function decodificaFattura($path){
 
 }
 
-print_r( decodificaFattura('Downloads/IT01879020517_g00b5.xml.p7m'));
+print_r( decodificaFattura('file.xml.p7m'));
  
